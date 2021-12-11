@@ -1,33 +1,47 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <title>Technically a Blog</title>
-</head>
+  </head>
 
-<body>
-    
-    <header>
-        <h1>
-            <a href="/">Technically a Blog</a>
-        </h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/login">Login</a>
-        </nav>
+  <body>
+
+    <header class="container-fluid px-5 py-3 bg-primary">
+      <div class="row">
+        <div class="col-8">
+          <h1>
+            <a href="/" class="text-light">Technically a Blog</a>
+          </h1>
+        </div>
+        <div class="col-4">
+          <nav class="row row-cols-auto justify-content-end">
+            <div class="col">
+              <a href="/" class="text-light">Home</a>
+            </div>
+            <div class="col">
+              <a href="/dashboard" class="text-light">Dashboard</a>
+            </div>
+            <div class="col">
+              <a href="/login" class="text-light">Login</a>
+            </div>
+          </nav>
+        </div>
+      </div>
     </header>
 
-    <main>
-        {{{body}}}
+    <main class="container-fluid">
+      {{{body}}}
     </main>
 
-    <footer>
-        <p>© Technically a Blog, Inc.</p>
+    <footer class="container-fluid">
+      <p>© Technically a Blog, Inc.</p>
     </footer>
 
-</body>
+  </body>
 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 </html>
