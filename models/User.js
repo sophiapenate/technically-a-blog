@@ -32,6 +32,11 @@ User.init(
         return bcrypt.hash(user.password, 10).then(hashedPw => {
           user.password = hashedPw;
         });
+      },
+      beforeUpdate(user) {
+        return bcrypt.hash(user.password, 10).then(hashedPw => {
+          user.password = hashedPw;
+        });
       }
     },
     sequelize,
