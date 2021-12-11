@@ -14,6 +14,9 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notContains: " ",
+      },
     },
     password: {
       type: DataTypes.STRING,
