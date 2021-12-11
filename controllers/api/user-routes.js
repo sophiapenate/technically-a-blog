@@ -4,7 +4,7 @@ const { User, Post, Comment } = require("../../models");
 router.get("/", (req, res) => {
   User.findAll({
     attributes: {
-      //exclude: ["password"],
+      exclude: ["password"],
     },
   })
     .then((dbData) => {
@@ -55,7 +55,12 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbData) => {
-      res.json(dbData);
+      req.session.save(() => {
+        req.session.user_id = dbData.id;
+        req.session.username = dbData.username;
+        req.session.loggedIn = true;
+        res.json(dbData);
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -81,7 +86,12 @@ router.post('/login', (req, res) => {
         return;
       }
 
-      res.json({ user: dbData, message: 'You are now logged in!' });
+      req.session.save(() => {
+        req.session.user_id = dbData.id;
+        req.session.username = dbData.username;
+        req.session.loggedIn = true;
+        res.json({ user: dbData, message: 'You are now logged in!' });
+      });
     });
 });
 
