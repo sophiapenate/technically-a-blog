@@ -3,22 +3,22 @@ const { User, Post, Comment } = require("../../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    order: [['created_at', 'DESC']],
+    order: [["created_at", "DESC"]],
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ["username"],
       },
       {
         model: Comment,
         include: [
           {
             model: User,
-            attributes: ['username']
-          }
-        ]
-      }
-    ]
+            attributes: ["username"],
+          },
+        ],
+      },
+    ],
   })
     .then((dbData) => {
       res.json(dbData);
@@ -37,19 +37,19 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ["username"],
       },
       {
         model: Comment,
-        order: [['created_at', 'ASC']],
+        order: [["created_at", "ASC"]],
         include: [
           {
             model: User,
-            attributes: ['username']
-          }
-        ]
-      }
-    ]
+            attributes: ["username"],
+          },
+        ],
+      },
+    ],
   })
     .then((dbData) => {
       if (!dbData) {
