@@ -1,9 +1,24 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { User, Post, Comment } = require("../../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    order: [['created_at', 'DESC']]
+    order: [['created_at', 'DESC']],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+        model: Comment,
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
+      }
+    ]
   })
     .then((dbData) => {
       res.json(dbData);
@@ -18,7 +33,23 @@ router.get("/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
-    }
+    },
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+        model: Comment,
+        order: [['created_at', 'ASC']],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
+      }
+    ]
   })
     .then((dbData) => {
       if (!dbData) {
