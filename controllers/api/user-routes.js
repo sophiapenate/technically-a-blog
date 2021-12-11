@@ -63,6 +63,28 @@ router.post("/", (req, res) => {
     });
 });
 
+router.post('/login', (req, res) => {
+  User.findOne({
+    where: {
+      username: req.body.username
+    }
+  })
+    .then(dbData => {
+      if (!dbData) {
+        res.status(404).json({ message: 'Username not found!' });
+        return;
+      }
+
+      const validPw = dbData.checkPw(req.body.password);
+      if (!validPw) {
+        res.status(400).json({ message: 'Incorrect password!' });
+        return;
+      }
+
+      res.json({ user: dbData, message: 'You are now logged in!' });
+    });
+});
+
 router.put("/:id", (req, res) => {
   User.update(req.body, {
     individualHooks: true,
