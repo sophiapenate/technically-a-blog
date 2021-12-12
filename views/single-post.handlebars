@@ -1,9 +1,43 @@
-<article>
-  <h4>
-    {{post.title}}
-  </h4>
-  <p>Posted by {{post.user.username}} on {{post.createdAt}}</p>
-  <div>
+<article class="card mb-4">
+  <div class="card-header bg-success pt-4 pb-3 px-4">
+    <h4>{{post.title}}</h4>
+    <p class="p-0 m-0">Posted by
+      {{post.user.username}}
+      on
+      {{post.createdAt}}</p>
+  </div>
+
+  <div class="card-body pt-3 px-4">
     {{post.content}}
   </div>
 </article>
+
+<div class="mb-4">
+  <h5>Leave a comment:</h5>
+  <form class="comment-form">
+    <div class="mb-3">
+      <textarea class="form-control" id="comment_input" rows="2"></textarea>
+      <div class="invalid-feedback"></div>
+    </div>
+    <button type="submit" class="btn btn-success">post comment</button>
+  </form>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header py-3 px-4">
+    <h5 class="p-0 m-0">{{post.comments.length}} comment(s):</h5>
+  </div>
+  <div class="card-body py-0 px-4">
+    <ul class="list-group list-group-flush p-0 m-0">
+      {{#each post.comments as |comment|}}
+        <li class="list-group-item px-0 py-3 m-0">
+          <p class="p-0 mb-2">{{comment.comment_text}}</p>
+          <p class="p-0 m-0 text-light">Posted by
+            {{comment.user.username}}
+            on
+            {{comment.createdAt}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

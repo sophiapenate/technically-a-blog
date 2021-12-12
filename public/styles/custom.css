@@ -14,8 +14,12 @@ a {
     cursor: pointer;
 }
 
-header a:hover {
+header a {
     color: #fff !important;
+}
+
+header a:hover {
+    color:#00bc8c !important;
 }
 
 header h1,
