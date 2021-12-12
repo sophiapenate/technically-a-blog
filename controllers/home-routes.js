@@ -46,4 +46,38 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/post/:id', (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Comment,
+        include: [
+          {
+            model: User,
+            attributes: ["username"],
+          },
+        ],
+      },
+    ],
+  })
+    .then(dbData => {
+      if (!dbData) {
+        res.status(404).render('404');
+        return;
+      }
+
+      const post = dbData.get({ plain: true });
+      res.render('single-post', { post, loggedIn: req.session.loggedIn })
+    })
+    .catch();
+  
+});
+
 module.exports = router;
