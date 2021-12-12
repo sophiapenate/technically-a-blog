@@ -1,19 +1,29 @@
 <div class="row justify-content-center">
-  <div class="col col-md-4">
+  <div class="col col-sm-8 col-md-6 col-lg-4">
+
     <h2 class="text-center mb-4">Login</h2>
+
     <form class="login-form">
       <div class="form-group mb-3 username_wrapper has-danger">
         <label for="username_input" class="form-label">username</label>
         <input type="text" class="form-control" id="username_input" />
+        <div class='invalid-feedback'></div>
       </div>
       <div class="mb-3 password_wrapper">
         <label for="password_input" class="form-label">password</label>
         <input type="password" class="form-control" id="password_input" />
+        <div class='invalid-feedback'></div>
       </div>
       <div class="d-grid gap-2 pt-3">
         <button type="submit" class="btn btn-lg btn-success">login</button>
       </div>
     </form>
+
+    <div class="mt-5 text-center">
+      <p class="m-0">Need to create an account?</p>
+      <p class="m-0"><a href="/signup">Sign up instead.</a></p>
+    </div>
+
   </div>
 </div>
 
