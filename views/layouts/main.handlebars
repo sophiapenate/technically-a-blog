@@ -26,7 +26,11 @@
                 <a href="/dashboard" class="px-2 text-light">Dashboard</a>
               </div>
               <div class="col">
+                {{#if loggedIn}}
+                <a id="logout" class="px-2 text-light">Logout</a>
+                {{else}}
                 <a href="/login" class="px-2 text-light">Login</a>
+                {{/if}}
               </div>
             </nav>
           </div>
@@ -45,4 +49,5 @@
 
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/logout.js"></script>
 </html>
