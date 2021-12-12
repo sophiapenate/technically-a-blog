@@ -12,6 +12,7 @@
   </div>
 </article>
 
+{{#if loggedIn}}
 <div class="mb-4">
   <h5>Leave a comment:</h5>
   <form class="comment-form">
@@ -22,6 +23,7 @@
     <button type="submit" class="btn btn-success">post comment</button>
   </form>
 </div>
+{{/if}}
 
 <div class="card mb-4">
   <div class="card-header py-3 px-4">
@@ -41,3 +43,5 @@
     </ul>
   </div>
 </div>
+
+<script src="/js/comment.js"></script>

@@ -33,7 +33,7 @@ async function signupFormHandler(e) {
 
   // check if user provided both username and password
   if (username && password && reenter_password && password === reenter_password) {
-    const response = await fetch("api/users", {
+    const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
