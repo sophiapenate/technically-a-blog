@@ -13,18 +13,20 @@
       <header class="container-fluid px-5 bg-primary">
         <div class="row">
           <div class="col-12 col-md-6 align-self-center py-4">
-            <h1 class="text-uppercase fw-bold fs-3 mb-0">
+            <h1 class="text-uppercase fw-bold fs-4 mb-0">
               <a href="/">Technically a Blog</a>
             </h1>
           </div>
           <div class="col-12 col-md-6 align-self-center">
-            <nav class="row row-cols-auto justify-content-end fs-5">
+            <nav class="row row-cols-auto justify-content-end fs-6">
               <div class="col">
                 <a href="/" class="px-2">Home</a>
               </div>
+              {{#if loggedIn}}
               <div class="col">
-                <a href="/dashboard" class="px-2">Dashboard</a>
+                <a href="/dashboard" class="px-2">My Dashboard</a>
               </div>
+              {{/if}}
               <div class="col">
                 {{#if loggedIn}}
                 <a id="logout" class="px-2">Logout</a>
