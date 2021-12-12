@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #fff !important;
+}
+
+header h1,
+header nav a {
+    letter-spacing: .075em;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        text-align: center;
+    }
+
+    header nav.justify-content-end {
+        justify-content: center !important;
+        padding-bottom: 1.25em;
+    }
+}
