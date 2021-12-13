@@ -22,14 +22,22 @@ router.get("/", (req, res) => {
       },
     ],
   })
-  .then(dbData => {
-    const posts = dbData.map((post) => post.get({ plain: true }));
-    res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then((dbData) => {
+      const posts = dbData.map((post) => post.get({ plain: true }));
+      res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/add-post", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("add-post", { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
