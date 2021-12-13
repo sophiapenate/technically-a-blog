@@ -2,7 +2,7 @@
   <div class="card-header bg-success pt-4 pb-3 px-4">
     <h4>{{post.title}}</h4>
     <p class="p-0 m-0">Posted by
-      {{post.user.username}}
+      {{format_capital post.user.username}}
       on
       {{format_date post.createdAt}}</p>
   </div>
@@ -36,7 +36,7 @@
         <li class="list-group-item px-0 py-3 m-0">
           <p class="p-0 mb-2">{{comment.comment_text}}</p>
           <p class="p-0 m-0 text-light">Posted by
-            {{comment.user.username}}
+            {{format_capital comment.user.username}}
             on
             {{format_date comment.createdAt}}</p>
         </li>

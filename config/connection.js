@@ -3,13 +3,14 @@ const Sequelize = require("sequelize");
 //import env variables
 require("dotenv").config();
 
+let sequelize;
 // check if running remotely with JAWSDB
 if (process.env.JAWSDB_URL) {
   // create remote db connection
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   // create local db connection
-  const sequelize = new Sequelize(
+  sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
     process.env.DB_PW,
