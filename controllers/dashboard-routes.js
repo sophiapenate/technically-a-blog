@@ -33,11 +33,28 @@ router.get("/", (req, res) => {
 });
 
 router.get("/add-post", (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
   res.render("add-post", { loggedIn: req.session.loggedIn });
+});
+
+router.get("/edit-post/:id", (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbData) => {
+      if (!dbData) {
+        res.status(404).render("404");
+        return;
+      }
+
+      const post = dbData.get({ plain: true });
+      res.render("edit-post", { post, loggedIn: req.session.loggedIn });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

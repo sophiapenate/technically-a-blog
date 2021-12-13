@@ -1,0 +1,23 @@
+<div class="row mb-3 justify-content-between">
+  <div class="col">
+    <h3>Edit Post:</h3>
+  </div>
+  <div class="col text-end">
+    <button id="delete-post-btn" class="btn btn-danger">Delete Post</button>
+  </div>
+</div>
+
+<form class="edit-post-form">
+  <div class="mb-3">
+    <label for="post_title" class="form-label">Title:</label>
+    <input class="form-control" id="post_title" value="{{post.title}}">
+  </div>
+  <div class="mb-3">
+    <label for="post_content" class="form-label">Content:</label>
+    <textarea class="form-control" id="post_content" rows="15">{{post.content}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-success">update post</button>
+</form>
+
+<script src="/js/edit-post.js"></script>
+<script src="/js/delete-post.js"></script>
