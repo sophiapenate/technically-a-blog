@@ -9,7 +9,7 @@
       <p class="p-0 m-0">Posted by
         {{post.user.username}}
         on
-        {{post.createdAt}}
+        {{format_date post.createdAt}}
         |
         {{post.comments.length}}
         {{format_plural "comment" post.comments.length}}</p>

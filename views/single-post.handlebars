@@ -4,7 +4,7 @@
     <p class="p-0 m-0">Posted by
       {{post.user.username}}
       on
-      {{post.createdAt}}</p>
+      {{format_date post.createdAt}}</p>
   </div>
 
   <div
@@ -38,7 +38,7 @@
           <p class="p-0 m-0 text-light">Posted by
             {{comment.user.username}}
             on
-            {{comment.createdAt}}</p>
+            {{format_date comment.createdAt}}</p>
         </li>
       {{/each}}
     </ul>
