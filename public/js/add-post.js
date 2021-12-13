@@ -13,7 +13,8 @@ async function addPostFormHandler(e) {
 
     if (response.ok) {
         response.json().then(postData => {
-          document.location.replace('/post/' + postData.id);
+          //document.location.replace('/post/' + postData.id);
+          document.location.replace('/dashboard');
         });
     } else {
         alert(response.statusText);

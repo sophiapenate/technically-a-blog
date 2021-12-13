@@ -7,22 +7,23 @@
       {{post.createdAt}}</p>
   </div>
 
-  <div class="card-body pt-3 px-4">
-    {{post.content}}
-  </div>
+  <div
+    class="post-content card-body pt-3 px-4"
+    style="white-space: pre-wrap"
+  >{{post.content}}</div>
 </article>
 
 {{#if loggedIn}}
-<div class="mb-4">
-  <h5>Leave a comment:</h5>
-  <form class="comment-form">
-    <div class="mb-3">
-      <textarea class="form-control" id="comment_input" rows="2"></textarea>
-      <div class="invalid-feedback"></div>
-    </div>
-    <button type="submit" class="btn btn-success">post comment</button>
-  </form>
-</div>
+  <div class="mb-4">
+    <h5>Leave a comment:</h5>
+    <form class="comment-form">
+      <div class="mb-3">
+        <textarea class="form-control" id="comment_input" rows="2"></textarea>
+        <div class="invalid-feedback"></div>
+      </div>
+      <button type="submit" class="btn btn-success">post comment</button>
+    </form>
+  </div>
 {{/if}}
 
 <div class="card mb-4">
