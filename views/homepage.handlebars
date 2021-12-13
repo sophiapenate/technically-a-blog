@@ -12,7 +12,7 @@
         {{post.createdAt}}
         |
         {{post.comments.length}}
-        comment(s)</p>
+        {{format_plural "comment" post.comments.length}}</p>
     </li>
   {{/each}}
 </ul>

@@ -19,8 +19,8 @@
         on
         {{post.createdAt}}
         |
-        {{post.comments.length}}
-        comment(s)</p>
+        {{post.comments.length}} {{format_plural "comment" post.comments.length}}
+        </p>
     </li>
   {{/each}}
 </ul>
