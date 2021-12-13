@@ -6,7 +6,13 @@
       <h4>
         <a href="/post/{{post.id}}">{{post.title}}</a>
       </h4>
-      <p class="p-0 m-0">Posted by {{post.user.username}} on {{post.createdAt}}</p>
+      <p class="p-0 m-0">Posted by
+        {{post.user.username}}
+        on
+        {{post.createdAt}}
+        |
+        {{post.comments.length}}
+        comment(s)</p>
     </li>
   {{/each}}
 </ul>
