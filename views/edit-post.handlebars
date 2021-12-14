@@ -10,11 +10,15 @@
 <form class="edit-post-form">
   <div class="mb-3">
     <label for="post_title" class="form-label">Title:</label>
-    <input class="form-control" id="post_title" value="{{post.title}}">
+    <input class="form-control" id="post_title" value="{{post.title}}" />
   </div>
   <div class="mb-3">
     <label for="post_content" class="form-label">Content:</label>
-    <textarea class="form-control" id="post_content" rows="15">{{post.content}}</textarea>
+    <textarea
+      class="form-control"
+      id="post_content"
+      rows="15"
+    >{{post.content}}</textarea>
   </div>
   <button type="submit" class="btn btn-success">update post</button>
 </form>

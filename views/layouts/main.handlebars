@@ -27,9 +27,9 @@
               </div>
               <div class="col">
                 {{#if loggedIn}}
-                <a id="logout" class="px-2">Logout</a>
+                  <a id="logout" class="px-2">Logout</a>
                 {{else}}
-                <a href="/login" class="px-2">Login</a>
+                  <a href="/login" class="px-2">Login</a>
                 {{/if}}
               </div>
             </nav>
@@ -47,9 +47,7 @@
     </div>
   </body>
 
-  {{!-- <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script> --}}
   {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
+    <script src="/js/logout.js"></script>
   {{/if}}
 </html>

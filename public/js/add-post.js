@@ -4,20 +4,20 @@ async function addPostFormHandler(e) {
   const title = document.querySelector("#post_title").value.trim();
   const content = document.querySelector("#post_content").value.trim();
 
-  if (content) {
+  if (title && content) {
     const response = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({ title, content }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-        response.json().then(postData => {
-          //document.location.replace('/post/' + postData.id);
-          document.location.replace('/dashboard');
-        });
+      response.json().then((postData) => {
+        //document.location.replace('/post/' + postData.id);
+        document.location.replace("/dashboard");
+      });
     } else {
-        alert(response.statusText);
+      alert(response.statusText);
     }
   }
 }

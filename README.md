@@ -1,4 +1,6 @@
-# technically-a-blog
+# Technically a Blog
+
+## 
 
 WHEN I revisit the site at a later time and choose to sign in
 THEN I am prompted to enter my username and password

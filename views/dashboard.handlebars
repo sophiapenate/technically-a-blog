@@ -8,23 +8,24 @@
 </div>
 
 {{#if posts.length}}
-<ul class="list-group list-group-flush">
-  {{#each posts as |post|}}
-    <li class="list-group-item py-3 px-4">
-      <h4>
-        <a href="/post/{{post.id}}">{{post.title}} </a> (<a href="/dashboard/edit-post/{{post.id}}">edit</a>)
-      </h4>
-      <p class="p-0 m-0">Posted by
-        {{format_capital post.user.username}}
-        on
-        {{format_date post.createdAt}}
-        |
-        {{post.comments.length}} {{format_plural "comment" post.comments.length}}
+  <ul class="list-group list-group-flush">
+    {{#each posts as |post|}}
+      <li class="list-group-item py-3 px-4">
+        <h4>
+          <a href="/post/{{post.id}}">{{post.title}} </a>
+          (<a href="/dashboard/edit-post/{{post.id}}">edit</a>)
+        </h4>
+        <p class="p-0 m-0">Posted by
+          {{format_capital post.user.username}}
+          on
+          {{format_date post.createdAt}}
+          |
+          {{post.comments.length}}
+          {{format_plural "comment" post.comments.length}}
         </p>
-    </li>
-  {{/each}}
-</ul>
+      </li>
+    {{/each}}
+  </ul>
 {{else}}
-<p>You haven't published anything yet!</p>
+  <p>You haven't published anything yet!</p>
 {{/if}}
-

@@ -10,13 +10,13 @@ async function commentFormHandler(e) {
     const response = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({ comment_text, post_id }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-        document.location.reload();
+      document.location.reload();
     } else {
-        alert(response.statusText);
+      alert(response.statusText);
     }
   }
 }

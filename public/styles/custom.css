@@ -5,10 +5,6 @@
     justify-content: flex-start;
 }
 
-footer {
-    margin-top: auto;
-}
-
 a {
     text-decoration: none;
     cursor: pointer;
@@ -25,6 +21,10 @@ header a:hover {
 header h1,
 header nav a {
     letter-spacing: .075em;
+}
+
+footer {
+    margin-top: auto;
 }
 
 @media screen and (max-width: 768px) {

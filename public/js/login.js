@@ -45,12 +45,14 @@ async function loginFormHandler(e) {
     }
   }
   
+  // if username left blank, prompt user to provide
   if (!username) {
     invalid_username.textContent = "Please enter your username.";
     username_input.classList.add("is-invalid");
     username_wrapper.classList.add("has-danger");
   }
   
+  // if password left blank, prompt user to provide
   if (!password) {
     invalid_password.textContent = "Please enter your password.";
     password_input.classList.add("is-invalid");

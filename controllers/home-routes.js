@@ -29,26 +29,26 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
-  res.render('signup');
+  res.render("signup");
 });
 
-router.get('/post/:id', (req, res) => {
+router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     include: [
       {
@@ -66,17 +66,16 @@ router.get('/post/:id', (req, res) => {
       },
     ],
   })
-    .then(dbData => {
+    .then((dbData) => {
       if (!dbData) {
-        res.status(404).render('404');
+        res.status(404).render("404");
         return;
       }
 
       const post = dbData.get({ plain: true });
-      res.render('single-post', { post, loggedIn: req.session.loggedIn })
+      res.render("single-post", { post, loggedIn: req.session.loggedIn });
     })
     .catch();
-  
 });
 
 module.exports = router;
