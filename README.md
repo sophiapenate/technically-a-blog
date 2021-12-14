@@ -1,9 +1,18 @@
 # Technically a Blog
 
-## 
+## Description
+A simple CMS-style blog site where users publish blog posts, and comment on each other's posts.
 
-WHEN I revisit the site at a later time and choose to sign in
-THEN I am prompted to enter my username and password
+## Live App
+Visit the live site at [technically-a-blog.herokuapp.com](https://technically-a-blog.herokuapp.com/).
 
-WHEN I am idle on the site for more than a set time
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
+## Screenshot
+![screenshot of app](./screenshot.png)
+
+# Questions
+For questions contact Sophia Barrett at [sophia@yoursummit.media](mailto:sophia@yoursummit.media) or visit [github.com/sophiabarrett](https://github.com/sophiabarrett).
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+Copyright © 2021 Sophia Barrett
