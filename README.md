@@ -9,6 +9,13 @@ Visit the live site at [technically-a-blog.herokuapp.com](https://technically-a-
 ## Screenshot
 ![screenshot of app](./screenshot.png)
 
+## Built With
+- Express
+- MySQL
+- Sequelize
+- Handlebars
+- bcrypt
+
 # Questions
 For questions contact Sophia Barrett at [sophia@yoursummit.media](mailto:sophia@yoursummit.media) or visit [github.com/sophiabarrett](https://github.com/sophiabarrett).
 
